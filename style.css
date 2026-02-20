@@ -1,0 +1,225 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Cairo',sans-serif;
+}
+
+body{
+background:#f4f6f9;
+padding-top:100px;
+}
+
+.main-header{
+background:#fff;
+position:fixed;
+top:0;
+width:100%;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+z-index:999;
+}
+
+.header-container{
+width:90%;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 0;
+}
+
+.logo{width:140px;}
+
+.cart-icon{
+cursor:pointer;
+font-size:20px;
+position:relative;
+}
+
+#cart-count{
+background:red;
+color:#fff;
+border-radius:50%;
+padding:2px 7px;
+font-size:12px;
+position:absolute;
+top:-10px;
+left:-10px;
+}
+
+.hero{
+height:50vh;
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url('img/compressed-1.png');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+text-align:center;
+}
+
+.img-gallery{
+width:90%;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:40px 0;
+}
+
+.product-card{
+background:#fff;
+padding:15px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:.3s;
+}
+
+.product-card:hover{
+transform:translateY(-5px);
+}
+
+.product-card img{
+width:100%;
+border-radius:10px;
+aspect-ratio:1/1;
+object-fit:cover;
+}
+
+.product-card button{
+margin-top:10px;
+padding:10px 15px;
+border:none;
+background:#295d91;
+color:#fff;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* السلة */
+.cart-sidebar{
+position:fixed;
+top:0;
+right:-400px;
+width:350px;
+height:100vh;
+background:#fff;
+box-shadow:-5px 0 15px rgba(0,0,0,0.1);
+padding:20px;
+transition:.4s;
+z-index:1000;
+overflow-y:auto;
+}
+
+.cart-sidebar.active{
+right:0;
+}
+
+.cart-sidebar button{
+width:100%;
+margin-top:10px;
+padding:10px;
+background:#25D366;
+border:none;
+color:#fff;
+border-radius:6px;
+cursor:pointer;
+}
+/* نافذة عرض الصورة */
+.image-modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
+
+.image-modal img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+  animation:zoomIn .3s ease;
+}
+
+.close-modal{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:35px;
+  color:#fff;
+  cursor:pointer;
+}
+
+@keyframes zoomIn{
+  from{transform:scale(0.7);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+/* ===== نافذة عرض احترافية ===== */
+.image-modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  background:rgba(0,0,0,0.95);
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  z-index:3000;
+}
+
+.image-modal img{
+  max-width:85%;
+  max-height:75%;
+  border-radius:12px;
+  animation:zoomIn .3s ease;
+}
+
+.close-modal{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:40px;
+  color:#fff;
+  cursor:pointer;
+}
+
+.nav-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(255,255,255,0.2);
+  border:none;
+  font-size:30px;
+  padding:10px 18px;
+  color:#fff;
+  cursor:pointer;
+  border-radius:50%;
+}
+
+.prev{ left:30px; }
+.next{ right:30px; }
+
+.nav-btn:hover{
+  background:#25D366;
+}
+
+.modal-caption{
+  color:#fff;
+  margin-top:15px;
+  font-size:18px;
+}
+
+@keyframes zoomIn{
+  from{transform:scale(.7);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}

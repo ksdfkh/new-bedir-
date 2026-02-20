@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>متجر شركة بدر التجارية</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="img/compressed-لوغو بدر04.png">
+</head>
+
+<body>
+
+
+<header class="main-header">
+<div class="header-container">
+<h1 class="company-name">شركة بدر التجارية</h1>
+<img src="img/compressed-لوغو بدر01.png" class="logo">
+<div class="cart-icon" onclick="toggleCart()">
+🛒 <span id="cart-count">0</span>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<h2>متجر خزائن الحمام المتكامل</h2>
+</section>
+
+<div class="img-gallery">
+
+<!-- جميع منتجاتك الأصلية بدون حذف -->
+
+<script>
+const products = [
+["compressed-1.png","لينا خشبي ابيض سفلية",150],
+["compressed-2.png","لينا خشبي ابيض علوية",150],
+["compressed-3.png","لينا هاي غلوس سفلي",160],
+["compressed-4.png","ميلامين احمر سفلي لينا",160],
+["compressed-5.png","لينا فضي سفلي",150],
+["compressed-6.png","لينا برتقالي سفلي",150],
+["compressed-7.png","ميني علوية",120],
+["compressed-8.png","ميني سفلي",120],
+["compressed-9.png","توليب سفلي",170],
+["compressed-10.png","توليب علوية",170],
+["compressed-11.png","لوتس علوي",180],
+["compressed-12.png","لوتس سفلي",180],
+["compressed-13.png","ليلى 50 سفلي",200],
+["compressed-14.png","ليلى 50 علوية",200],
+["compressed-15.png","ليلى 60 سفلي",210],
+["compressed-16.png","ليلى 60 علوية",210],
+["compressed-17.png","ليلى 80 علوية",230],
+["compressed-18.png","ليلى 80 سفلي",230],
+["compressed-19.png","فرح 80 علوية",250],
+["compressed-20.png","فرح 80 سفلي",250],
+["compressed-21.png","اوركيدايمين سفلي",220],
+["compressed-22.png","اوركيدايمين علوية",220],
+["compressed-23.png","أوركيدا يساري سفلي",220],
+["compressed-24.png","أوركيدا يساري علوية",220],
+["compressed-25.png","ريحان سفلي 65",210],
+["compressed-26.png","ريحان علوية 65",210],
+["compressed-27.png","جودي سفلي",190],
+["compressed-29.png","جودي علوية",190],
+["compressed-30.png","ريحان حديدي 65 سفلي",240],
+["compressed-31.png","ريحان حديدي 65 علوية",240],
+["compressed-32.png","ميني حديدي سفلي",180],
+["compressed-33.png","ميني حديدي علوية",180],
+["compressed-34.png","ميني خشبي سفلي",170],
+["compressed-35.png","ميني خشبي علوية",170],
+["compressed-36.png","ريحان خشبي 80 علوية",260],
+["compressed-37.png","ريحان خشبي 80 سفلي",260],
+["compressed-38.png","أوركيدا 48 علوية",200],
+["compressed-39.png","اوركيدا 48 سفلي",200],
+["compressed-40.png","دبي علوية",190],
+["compressed-41.png","دبي سفلي",190],
+["compressed-42.png","تيرا 50 علوية",210],
+["compressed-43.png","تيرا 50 سفلي",210],
+["compressed-44.png","تيرا 65 علوية",230],
+["compressed-45.png","تيرا 65 سفلي",230],
+["compressed-46.png","تيرا 80 علوية",260],
+["compressed-47.png","تيرا 80 سفلي",260]
+];
+
+const gallery = document.currentScript.parentElement;
+
+products.forEach(p=>{
+gallery.innerHTML += `
+<div class="product-card">
+<img src="img/${p[0]}" loading="lazy">
+<h3>${p[1]}</h3>
+<p>السعر: ${p[2]}$</p>
+<button onclick="addToCart('${p[1]}',${p[2]})">أضف إلى السلة</button>
+</div>`;
+});
+</script>
+
+</div>
+
+<div class="cart-sidebar" id="cart">
+<h2>سلة المشتريات</h2>
+<div id="cart-items"></div>
+<h3>الإجمالي: <span id="total">0</span>$</h3>
+<button onclick="sendOrder()">إرسال الطلب عبر واتساب</button>
+<button onclick="toggleCart()">إغلاق</button>
+</div>
+
+<script src="script.js"></script>
+<!-- نافذة عرض الصور الاحترافية -->
+<div class="image-modal" id="imageModal">
+  <span class="close-modal" onclick="closeModal()">×</span>
+
+  <button class="nav-btn prev" onclick="prevImage()">❮</button>
+  <img id="modalImage">
+  <button class="nav-btn next" onclick="nextImage()">❯</button>
+
+  <div class="modal-caption" id="modalCaption"></div>
+</div>
+</body>
+</html>
